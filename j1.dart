@@ -1,20 +1,27 @@
-import 'dart:io';
-import 'package:csv/csv.dart';
-import 'dart:developer' show log;
-
-import 'data/dart_data.dart';
+import 'migrations/library_data.dart';
+import 'migrations/registration_data.dart';
+import 'services/db_model.dart';
 
 void main() async {
-  await MyCSVDataBase().Create(dummyData);
-}
+  var a1 = MyCsvDb(dbName: 'libraryDb');
+  var a2 = MyCsvDb(dbName: 'registrationDb');
 
-class MyCSVDataBase {
-  Create(List<List<String>> data) async {
-    String csvString = const ListToCsvConverter().convert(data);
+  //make DBs
+  await a1.create(
+    modelData: libraryData,
+  );
 
-    File file = File('data/output.csv');
-    await file.writeAsString(csvString);
+  await a2.create(
+    modelData: registrationData,
+  );
 
-    log('CSV file created successfully!');
-  }
+  // await MyCsvDb(dbName: 'examinationsDb').create(
+  //   modelData: libraryData,
+  //   filePath: 'data/examinations_db.csv',
+  // );
+
+//Read Dbs
+  await a1.read();
+  // await MyCsvDb(dbName: 'examsinationsDb').read(filePath: 'data/examsinations_db.csv');
+  // await MyCsvDb(dbName: 'studentsDb').read(filePath: 'data/students_db.csv');
 }
