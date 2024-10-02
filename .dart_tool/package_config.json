@@ -1,0 +1,23 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "csv",
+      "rootUri": "file:///Users/hamidasgharian/.pub-cache/hosted/pub.dev/csv-6.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "advanced_databases",
+      "rootUri": "../",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    }
+  ],
+  "generated": "2024-10-02T16:05:07.953581Z",
+  "generator": "pub",
+  "generatorVersion": "3.5.1",
+  "flutterRoot": "file:///Users/hamidasgharian/development/flutter",
+  "flutterVersion": "3.24.1",
+  "pubCache": "file:///Users/hamidasgharian/.pub-cache"
+}

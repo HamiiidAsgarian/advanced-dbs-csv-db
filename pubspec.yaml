@@ -1,0 +1,8 @@
+name: advanced_databases
+version: 1.0.0
+environment:
+  sdk: "^3.5.0"
+
+dependencies:
+  # For CSV database
+  csv: ^6.0.0
