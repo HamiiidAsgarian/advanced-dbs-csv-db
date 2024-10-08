@@ -1,3 +1,5 @@
-Name,Father Name,Address,Phone Number
-Ali,Ahmad,Karachi,0321-1234567
-Ahsan,Iqbal,Lahore,0300-7654321
+name,fatherName,address,phoneNumber,id
+n1,fn1,a1,pn1,1
+n1,fn1,a1,pn1,1
+n2,fn2,a2,pn2,2
+n3,fn3,a3,pn3,3
