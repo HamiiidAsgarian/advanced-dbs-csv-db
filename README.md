@@ -1,4 +1,3 @@
-Markdown
 # CSV Database Library
 
 A simple CSV database library for Dart, providing basic query operations.
@@ -14,7 +13,7 @@ To use this library, create a `CsvDb` object with the path to your CSV file:
 
 ```dart
 var db = CsvDb(filePath: 'databases/library_db.csv');
- 
+```
 
 You can then use the various methods to perform operations on the database:
 
@@ -22,8 +21,7 @@ Create
 Create a new CSV database file:
 
 ```dart
-await db.create(dataModel: [...]);
- 
+await db.create(dataModel: [...]); 
 ```
 
 Drop
@@ -31,14 +29,12 @@ Delete the CSV database file:
 
 ```dart
 await db.drop();
- 
 ```
 Insert
 Insert new data into the CSV database:
 
 ```dart
 await db.insert(data: DbModel(...));
- 
 ```
 
 Select All
@@ -46,7 +42,6 @@ Retrieve all data from the CSV database:
 
 ```dart
 var data = await db.selectAll();
- 
 ```
 Select Where
 Retrieve data from the CSV database based on a query:
