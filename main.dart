@@ -1,34 +1,33 @@
 import 'migrations/library_data.dart';
 import 'services/database.dart';
 
-void main() async {
-  //---- define a database
-  var libraryDb = CsvDb(filePath: 'databases/library_db.csv');
+Future<void> main() async {
+  const filePath = 'databases/library_db.csv';
+  final libraryDb = CsvDb(filePath: filePath);
 
-  //---- create a database with defined model
-  await libraryDb.create(
-    dataModel: [LibraryModel.migrations],
+//----Create table
+  await libraryDb.create(dataModel: [LibraryModel.migrations]);
+
+//----Insert data
+  await libraryDb.insert(
+    data: LibraryModel(
+      name: 'n4',
+      fatherName: 'fn4',
+      address: 'a4',
+      phoneNumber: 'pn4',
+      id: 4,
+    ),
   );
 
-  //---- insert data as model
-  // await libraryDb.insert(
-  //     data: LibraryModel(
-  //         name: 'n4',
-  //         fatherName: 'fn4',
-  //         address: 'a4',
-  //         phoneNumber: 'pn4',
-  //         id: 4));
-
-  print('------');
-
-// display all the data
+//----selectAll query
   final allData = await libraryDb.selectAll();
-  print('selectAll res: ${allData}');
-  print('------');
+  print('selectAll res: $allData');
 
-// display filtered data
+//----selectWhere query
   final filteredData = await libraryDb.selectWhere(
-      columnName: 'id', targetValue: 2, operation: QueryOps.lte);
-  print('selectWhere res: ${filteredData}');
-  print('------');
+    columnName: 'id',
+    targetValue: 2,
+    operation: QueryOps.lte,
+  );
+  print('selectWhere res: $filteredData');
 }

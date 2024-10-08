@@ -54,7 +54,6 @@ class CsvDb {
 
   //Read DB
   Future<List<List<dynamic>>> selectAll() async {
-    // final file = File(_file);
     final csvString = await _file.readAsString();
     final data = CsvToListConverter().convert(csvString);
     return data;
@@ -65,7 +64,6 @@ class CsvDb {
     required dynamic targetValue,
     QueryOps operation = QueryOps.eq,
   }) async {
-    // final file = File(_file);
     final csvString = await _file.readAsString();
     final table = CsvToListConverter().convert(csvString);
 
